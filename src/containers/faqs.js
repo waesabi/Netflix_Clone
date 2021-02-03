@@ -1,6 +1,6 @@
 import React from "react";
 import faqsData from "../fixtures/faq.json";
-import { Accordion } from "../components";
+import { Accordion, OptForm } from "../components";
 
 const FaqsContainer = () => {
   console.log(faqsData);
@@ -17,6 +17,13 @@ const FaqsContainer = () => {
           </Accordion.Item>
         );
       })}
+      <OptForm>
+        <OptForm.Input placeholder="Email Address" />
+        <OptForm.Button>Try it now</OptForm.Button>
+        <OptForm.Text>
+          Ready to watch? Enter your email to creeate or restart your membership{" "}
+        </OptForm.Text>
+      </OptForm>
     </Accordion>
   );
 };
