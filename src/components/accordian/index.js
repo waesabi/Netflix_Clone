@@ -38,11 +38,18 @@ Accordion.Item = function AccordionItem({ children, ...restProps }) {
 };
 
 Accordion.Header = function AccordionHeader({ children, ...restProps }) {
-  // eslint-disable-next-line no-unused-vars
   const { toggleShow, setToggleShow } = useContext(ToggleContext);
   return (
-    <Header {...restProps} onClick={() => setToggleShow((toggle) => !toggle)}>
+    <Header
+      {...restProps}
+      onClick={() => setToggleShow((toggleShow) => !toggleShow)}
+    >
       {children}
+      {toggleShow ? (
+        <img src="/images/icons/close-slim.png" alt="Close" />
+      ) : (
+        <img src="/images/icons/add.png" alt="Open" />
+      )}
     </Header>
   );
 };
